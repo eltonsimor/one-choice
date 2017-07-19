@@ -8,4 +8,4 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/vianuvem?useSSL=false
     username: root
-    password: 9330923a
+    password: root
