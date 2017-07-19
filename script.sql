@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `vianuvem`.`orders` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+use vianuvem;
 
 INSERT INTO Lists (name) values("Lista Para Churrasco")
 
