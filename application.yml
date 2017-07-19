@@ -1,0 +1,11 @@
+server:
+  context-path: "/vianuvem"
+
+spring:
+  jpa:
+    hibernate:
+      dll-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/vianuvem?useSSL=false
+    username: root
+    password: 9330923a
