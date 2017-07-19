@@ -46,7 +46,7 @@ echo '{ "name":"Lista do Elton Moraes" }' | curl -X POST -d @- http://localhost:
 
 _Request para salvar uma nova Ordem:_
 ```javascript
-echo '{ "name": "Maça", "quantity": 5, "price": 1.99, "nameImage": "laranja.jpg", "marked": "S","lists": {"pk": 2 } }' | curl -X POST -d @- http://localhost:8080/vianuvem/saveOrder --header "Content-Type:application/json"
+echo '{ "name": "Maça", "quantity": 5, "price": 1.99, "nameImage": "laranja.jpg", "marked": "S","lists": {"pk": 1 } }' | curl -X POST -d @- http://localhost:8080/vianuvem/saveOrder --header "Content-Type:application/json"
 ```
 
 _Request para obter as Listas:_
