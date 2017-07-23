@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Teste Pagina</title>
+
+    <link  href="webjars/bootstrap/3.3.7/css/bootstrap-theme.css" rel="stylesheet"/>
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/icon.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+
+</head>
+<body>
+<header id="header">
+    <nav class="navbar navbar-default" role="navigation">
+        <a class="navbar-brand" href="/vianuvem/home"><img id="logo" src="images/logo.png"/></a>
+    </nav>
+</header>
+<div class="main">
+    <aside id="sidebar">
+        <div class="sidebar-wrapper">
+            <nav id="mainnav">
+                <ul class="nav nav-list">
+                    <li>
+                        <a href="/vianuvem/home">
+                            <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                            <span class="txt">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/vianuvem/lists">
+                            <span class="icon"><i class="icon20 i-menu-6"></i></span>
+                            <span class="txt">Cadastrar Lista</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <section id="content">
+        <div class="wrapper">
+            <div class="crumb">
+                <ul class="breadcrumb">
+                    <li><a href="/vianuvem/home"><i class="icon16 i-home-4"></i>Vianuvem</a></li>
+                    <li class="active">Cadastro de Listas</li>
+                </ul>
+            </div>
+
+            <div class="container-fluid">
+                <div id="heading" class="page-header">
+                    <h1><i class="icon20 i-file-7"></i> Cadastro de Listas</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="icon"><i class="icon20 i-menu-6"></i></div>
+                                <h4>Lista</h4>
+                            </div>
+
+                            <div class="panel-body">
+                                <div id="feedback"></div>
+                                <form class="form-horizontal" id="create-list-form">
+                                    <div class="form-group">
+                                        <div class="col-lg-10">
+                                            <div class="col-lg-10">
+                                                <input class="form-control" type="text" placeholder="Nome da Lista para Cadastro" id="name-list"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-10">
+                                            <div class="col-lg-2">
+                                                <button type="submit" class="btn btn-inverse form-control" id="btn-list">Cadastrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

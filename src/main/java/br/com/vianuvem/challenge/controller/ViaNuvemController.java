@@ -13,4 +13,9 @@ public class ViaNuvemController {
     public String home(){
         return "home";
     }
+
+    @GetMapping("/lists")
+    public String lists(){
+        return "lists";
+    }
 }
