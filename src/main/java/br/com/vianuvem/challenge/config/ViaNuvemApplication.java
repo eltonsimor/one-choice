@@ -10,7 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @SpringBootApplication(scanBasePackages = {
         "br.com.vianuvem.challenge.rest",
-        "br.com.vianuvem.challenge.service"
+        "br.com.vianuvem.challenge.service",
+        "br.com.vianuvem.challenge.controller"
 })
 @EnableJpaRepositories("br.com.vianuvem.challenge.repository")
 @EntityScan("br.com.vianuvem.challenge.entity")
