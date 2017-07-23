@@ -63,17 +63,18 @@
                                 </div>
 
                                 <div class="panel-body">
-                                    <form class="form-horizontal" role="form" id="create-order-form">
+                                    <div id="feedback"></div>
+                                    <form class="form-horizontal" id="create-order-form">
                                         <div class="form-group">
                                             <div class="col-lg-10">
                                                 <div class="col-lg-4">
-                                                    <input class="form-control" type="text" placeholder="Nome da Ordem"/>
+                                                    <input class="form-control" type="text" placeholder="Nome da Ordem" id="name-order" aria-required="true" />
                                                 </div>
                                                 <div class="col-lg-4">
-                                                    <input class="form-control" type="text" placeholder="Quantidade"/>
+                                                    <input class="form-control" type="number" step="1" placeholder="Quantidade" id="quantity-order" aria-required="true" />
                                                 </div>
                                                 <div class="col-lg-4">
-                                                    <input class="form-control" type="text" placeholder="Preço"/>
+                                                    <input class="form-control" type="number" step="0.01" placeholder="Preço" id="price-order" aria-required="true" />
                                                 </div>
                                             </div>
                                         </div>
@@ -81,17 +82,13 @@
                                             <div class="col-lg-10">
                                                 <label class="col-lg-1" for="fileinput">Foto</label>
                                                 <div class="col-lg-3">
-                                                    <input type="file" name="fileinput" id="file" />
+                                                    <input type="file" name="fileinput" id="photo-order"/>
                                                 </div>
 
                                                 <label class="col-lg-1" for="select">Lista</label>
                                                 <div class="col-lg-3">
-                                                    <select name="select" class="form-control">
-                                                        <option>Who</option>
-                                                        <option selected="selected">What</option>
-                                                        <option>When</option>
-                                                        <option>Where</option>
-                                                        <option>How</option>
+                                                    <select name="select" class="form-control" id="list-selected-order" aria-required="true" >
+                                                        <option value="" selected="selected" label="(Selecione uma Lista)" />
                                                     </select>
                                                 </div>
 
@@ -100,7 +97,7 @@
                                         <div class="form-group">
                                             <div class="col-lg-10">
                                                 <div class="col-lg-2">
-                                                    <button type="submit" class="btn btn-inverse form-control">Cadastrar</button>
+                                                    <button type="submit" class="btn btn-inverse form-control" id="btn-order">Cadastrar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,5 +152,9 @@
             </div>
         </section>
     </div>
+
+
+    <script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/controller/orders/orders.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ public class ViaNuvemRestController {
             method = RequestMethod.GET,
             produces = "application/json"
     )
-    @ResponseStatus(code = HttpStatus.FOUND)
+    @ResponseStatus(code = HttpStatus.OK)
     public List<ListsRS> findAllLists() throws Exception {
         List<ListsRS> lists = ConverterUtils.convertTo(listsService.findAllLists(), List.class);
         return lists;
@@ -138,7 +138,7 @@ public class ViaNuvemRestController {
             consumes = "application/json",
             produces = "application/json"
     )
-    @ResponseStatus(code = HttpStatus.FOUND)
+    @ResponseStatus(code = HttpStatus.OK)
     public List<OrderRS> findAllOrders() throws Exception{
         List<OrderRS> response = ConverterUtils.convertTo(orderService.findAllOrders(),List.class);
         return response;
@@ -150,7 +150,7 @@ public class ViaNuvemRestController {
             consumes = "application/json",
             produces = "application/json"
     )
-    @ResponseStatus(code = HttpStatus.FOUND)
+    @ResponseStatus(code = HttpStatus.OK)
     public List<OrderRS> findOrdersByList(
             @Valid
             @NotNull(message = "{lists.pk.notnull}")

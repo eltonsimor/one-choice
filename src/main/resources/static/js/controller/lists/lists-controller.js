@@ -1,3 +1,7 @@
+/**
+ * Created by eltonmoraes on 7/23/17.
+ */
+
 $(document).ready(function () {
     $("#btn-list").click(function (event) {
         event.preventDefault;
@@ -10,10 +14,10 @@ $(document).ready(function () {
 });
 
 function create_list() {
-    var search = {}
+    var lists = {}
 
     var name = $("#name-list").val();
-    search["name"] = name;
+    lists["name"] = name;
     $("#btn-list").prop("disabled", true);
 
     if(name != ""){
@@ -21,7 +25,7 @@ function create_list() {
             type: "POST",
             contentType: "application/json",
             url: "/vianuvem/saveList",
-            data: JSON.stringify(search),
+            data: JSON.stringify(lists),
             dataType: 'json',
             cache: false,
             timeout: 600000,
