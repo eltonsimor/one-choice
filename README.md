@@ -21,19 +21,27 @@
 
 #### Após realizar o pré-requisito vamos seguir o passo-a-passo
 
+
 * 1) realizar o clone do projeto.
 ```javascript
-    git@github.com:eltonsimor/one-choice.git
+    git clone git@github.com:eltonsimor/one-choice.git
 ```
 
-* 2) Acessar a raíz do projeto e executar o comando:
+* 2) realizar o seguinte comando na raiz do projeto no terminal.
 ```javascript
-    'gradle build'
+    docker-compose up
 ```
 
-* 3) Após a finalização do build, executar o comando:
+* 3) rodar o [script.sql](https://github.com/eltonsimor/one-choice/blob/master/script.sql) para criar as tabelas e o banco de dados.
+
+* 4) Acessar a raíz do projeto e executar o comando:
 ```javascript
-    'java -jar build/libs/vianuvem-challenge-1.0.0.war'
+    gradle build
+```
+
+* 5) Após a finalização do build, executar o comando:
+```javascript
+    java -jar build/libs/vianuvem-challenge-1.0.0.war
 ```
 
 >Pronto! Aplicação já pode ser utilizada! ;)
