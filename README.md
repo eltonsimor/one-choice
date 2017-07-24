@@ -15,6 +15,7 @@
 
 * 1) Ter o Java 8 Instalado [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 * 2) Ter o Gradle [Gradle](https://services.gradle.org/distributions/gradle-2.14.1-all.zip).
+* 3) Ter o Docker e Docker Compose [Docker for Mac](https://www.docker.com/docker-mac) / [Docker for Windows](https://www.docker.com/docker-windows) / [Docker for Linux](https://docs.docker.com/engine/installation/linux/docker-ee/ubuntu/)
 
 
 
