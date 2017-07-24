@@ -41,7 +41,7 @@
 
 * 5) Após a finalização do build, executar o comando:
 ```javascript
-    java -jar build/libs/vianuvem-challenge-1.0.0.war
+'    java -jar build/libs/vianuvem-challenge-1.0.0.war   '
 ```
 
 >Pronto! Aplicação já pode ser utilizada! ;)
