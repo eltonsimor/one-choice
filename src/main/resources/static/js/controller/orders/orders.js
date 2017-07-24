@@ -31,6 +31,7 @@ $(document).ready(function () {
 
 
     loadSelectList();
+    loadTableOrders();
 
 });
 
@@ -38,6 +39,7 @@ function create_order() {
     var order = {};
     var lists = {};
 
+    var pk = $("#pk-order").val();
     var name = $("#name-order").val();
     var price = $("#price-order").val();
     var quantity = $("#quantity-order").val();
@@ -45,6 +47,7 @@ function create_order() {
     var nameImage = $("#photo-order").val();
 
     lists['pk']= list;
+    order['pk'] = pk;
     order['name'] = name;
     order['price'] = price;
     order['quantity'] = quantity;
@@ -70,12 +73,13 @@ function create_order() {
 
                 console.log("SUCCESS : ", data);
                 $("#btn-order").prop("disabled", false);
-
+                $('#pk-order').val('');
                 $("#name-order").val('');
                 $("#price-order").val('');
                 $("#quantity-order").val('');
                 $("#list-selected-order").val('');
                 $("#photo-order").val('');
+                window.location.href = '/vianuvem/home'
             },
             error: function (e) {
 
@@ -137,4 +141,86 @@ function loadSelectList() {
         }
     });
 
+}
+
+function loadTableOrders() {
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        url: "/vianuvem/findAllOrders",
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            data.forEach((d) => {
+                $("#tbody-order").append(
+                '<tr class="gradeX">'+
+                '<td>'+ d.pk + '</td>' +
+                '<td>'+ d.name + '</td>' +
+                '<td class="center">' + d.quantity + '</td>' +
+                '<td class="center"> R$' + d.price + '</td>' +
+                '<td class="center">' + d.marked + '</td>' +
+                '<td>'+ d.lists.name + '</td>'+
+                '<td>'+
+                '<div class="btn-group">' +
+                '<a href="javascript:updateOrder('+ d.pk +')">Editar</a> /' +
+                '<a href="javascript:deleteOrder('+ d.pk +')">Deletar</a>' +
+                '</div>' +
+                '</td>'+
+                '</tr>'
+            )
+        });
+        },
+        error: function (e) {
+            console.log("ERROR : ", e);
+        }
+    });
+}
+
+function updateOrder(pk) {
+    $.ajax({
+        type: "GET",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        url: "/vianuvem/findOrderByPk?pk=" + pk,
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            $("#name-order").val(data.name);
+            $("#pk-order").val(data.pk);
+            $("#price-order").val(data.price);
+            $("#quantity-order").val(data.quantity);
+            $("#list-selected-order").val(data.lists.pk);
+        },
+        error: function (e) {
+            console.log("ERROR : ", e);
+        }
+    });
+}
+
+function deleteOrder(pk) {
+    $.ajax({
+        type: "DELETE",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        url: "/vianuvem/deleteOrder?pk=" + pk,
+        dataType: 'json',
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            window.location.href = "/vianuvem/home";
+        },
+        error: function (e) {
+            console.log("ERROR : ", e);
+        }
+    });
+}
+
+function openModal(id){
+    $(id).show()
 }

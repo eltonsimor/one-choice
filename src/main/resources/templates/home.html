@@ -66,6 +66,16 @@
                                     <div id="feedback"></div>
                                     <form class="form-horizontal" id="create-order-form">
                                         <div class="form-group">
+                                            <div class="form-group">
+                                                <div class="col-lg-10">
+                                                    <label class="col-lg-1 " for="readonly">Numero Ordem: </label>
+                                                    <div class="col-lg-2">
+                                                        <input class="form-control" type="text" readonly="readonly" id="pk-order"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <div class="col-lg-10">
                                                 <div class="col-lg-4">
                                                     <input class="form-control" type="text" placeholder="Nome da Ordem" id="name-order" aria-required="true" />
@@ -143,6 +153,6 @@
 
     <script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/controller/orders/orders.js"></script>
-    <script type="text/javascript" src="js/controller/orders/table-orders.js"></script>
+
 </body>
 </html>

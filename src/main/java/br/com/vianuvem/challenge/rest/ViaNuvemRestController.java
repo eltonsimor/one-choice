@@ -160,4 +160,15 @@ public class ViaNuvemRestController {
         return response;
     }
 
+    @RequestMapping(
+            value = "findOrderByPk",
+            method = RequestMethod.GET,
+            produces = "application/json"
+    )
+    @ResponseStatus(code = HttpStatus.OK)
+    public OrderRS findOrderByPk(@RequestParam("pk") Integer pk) throws Exception{
+        OrderRS response = ConverterUtils.convertTo(orderService.findOrderByPk(pk), OrderRS.class);
+        return response;
+    }
+
 }

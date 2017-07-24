@@ -7,6 +7,7 @@ import br.com.vianuvem.challenge.entity.OrderEntity;
 import br.com.vianuvem.challenge.repository.ListsRepository;
 import br.com.vianuvem.challenge.repository.OrderRepository;
 import br.com.vianuvem.challenge.service.OrderService;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -54,6 +55,12 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void deleteOrder(Integer pk) throws Exception {
         orderRepository.delete(pk);
+    }
+
+    @Override
+    public OrderDTO findOrderByPk(Integer pk) throws Exception {
+        OrderDTO dto = ConverterUtils.convertTo(orderRepository.findOne(pk), OrderDTO.class);
+        return dto;
     }
 
 

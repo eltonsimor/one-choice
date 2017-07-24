@@ -17,5 +17,6 @@ public interface OrderService extends Serializable {
     List<OrderDTO> findAllOrders() throws Exception;
     List<OrderDTO> findOrdersByList(Integer listsPk) throws Exception;
     void deleteOrder(Integer pk) throws Exception;
+    OrderDTO findOrderByPk(Integer pk) throws Exception;
 
 }
