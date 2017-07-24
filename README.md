@@ -46,6 +46,22 @@
 
 >Pronto! Aplicação já pode ser utilizada! ;)
 
+**URLs ambiente Local**
+
+_Página Principal:_
+```
+    http://localhost:8080/vianuvem/home
+    
+    ou 
+    
+    http://localhost:8080/vianuvem/
+```
+
+_Página para Cadastro de nova Lista:_
+```
+    http://localhost:8080/vianuvem/lists
+```
+
 **Request para o ambiente Local**
 
 _Request para salvar uma nova Lista de Compras:_
