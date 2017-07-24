@@ -32,7 +32,7 @@
     docker-compose up
 ```
 
-* 3) rodar o [script.sql](https://github.com/eltonsimor/one-choice/blob/master/script.sql){:target=""_black"} para criar as tabelas e o banco de dados.
+* 3) rodar o [script.sql](https://github.com/eltonsimor/one-choice/blob/master/script.sql){:target="_black"} para criar as tabelas e o banco de dados.
 
 * 4) Acessar a raíz do projeto e executar o comando:
 ```javascript
