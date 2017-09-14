@@ -32,7 +32,7 @@ public class ViaNuvemRestController {
 
 
     @RequestMapping(
-            value = "findAllLists",
+            value = "lists",
             method = RequestMethod.GET,
             produces = "application/json"
     )
@@ -43,7 +43,7 @@ public class ViaNuvemRestController {
     }
 
     @RequestMapping(
-            value = "saveList",
+            value = "lists",
             method = RequestMethod.POST,
             produces = "application/json",
             consumes = "application/json"
@@ -57,7 +57,7 @@ public class ViaNuvemRestController {
     }
 
     @RequestMapping(
-            value = "saveList",
+            value = "lists",
             method = RequestMethod.PUT,
             produces = "application/json",
             consumes = "application/json"
@@ -73,7 +73,7 @@ public class ViaNuvemRestController {
     }
 
     @RequestMapping(
-            value = "deleteList",
+            value = "lists/{pk}",
             method = RequestMethod.DELETE,
             produces = "application/json"
     )
@@ -81,7 +81,7 @@ public class ViaNuvemRestController {
     public void deleteList(
             @Valid
             @NotNull(message = "lists.pk.notnull")
-            @RequestParam("pk")
+            @PathVariable("pk")
             @Min(value = 0, message = "lists.pk.min")
             Integer pk) throws Exception{
 
@@ -89,7 +89,7 @@ public class ViaNuvemRestController {
     }
 
     @RequestMapping(
-            value = "saveOrder",
+            value = "orders",
             method = RequestMethod.POST,
             consumes = "application/json",
             produces = "application/json"
@@ -103,7 +103,7 @@ public class ViaNuvemRestController {
     }
 
     @RequestMapping(
-            value = "saveOrder",
+            value = "orders",
             method = RequestMethod.PUT,
             consumes = "application/json",
             produces = "application/json"
@@ -119,21 +119,21 @@ public class ViaNuvemRestController {
     }
 
     @RequestMapping(
-            value = "deleteOrder",
+            value = "orders/{pk}",
             method = RequestMethod.DELETE,
             produces = "application/json"
     )
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteOrder(@Valid
                             @NotNull(message = "order.pk.notnull")
-                            @RequestParam("pk")
+                            @PathVariable("pk")
                             @Min(value = 0, message = "order.pk.min")
                             Integer pk) throws Exception{
         orderService.deleteOrder(pk);
     }
 
     @RequestMapping(
-            value = "findAllOrders",
+            value = "orders",
             method = RequestMethod.GET,
             consumes = "application/json",
             produces = "application/json"
@@ -145,7 +145,7 @@ public class ViaNuvemRestController {
     }
 
     @RequestMapping(
-            value = "findOrdersByList",
+            value = "lists/{pk}/orders",
             method = RequestMethod.GET,
             consumes = "application/json",
             produces = "application/json"
@@ -154,19 +154,19 @@ public class ViaNuvemRestController {
     public List<OrderRS> findOrdersByList(
             @Valid
             @NotNull(message = "{lists.pk.notnull}")
-            @RequestParam("list_pk")
-            Integer listsPk) throws Exception{
-        List<OrderRS> response = ConverterUtils.convertTo(orderService.findOrdersByList(listsPk),List.class);
+            @PathVariable("pk")
+            Integer pk) throws Exception{
+        List<OrderRS> response = ConverterUtils.convertTo(orderService.findOrdersByList(pk),List.class);
         return response;
     }
 
     @RequestMapping(
-            value = "findOrderByPk",
+            value = "orders/{pk}",
             method = RequestMethod.GET,
             produces = "application/json"
     )
     @ResponseStatus(code = HttpStatus.OK)
-    public OrderRS findOrderByPk(@RequestParam("pk") Integer pk) throws Exception{
+    public OrderRS findOrderByPk(@PathVariable("pk") Integer pk) throws Exception{
         OrderRS response = ConverterUtils.convertTo(orderService.findOrderByPk(pk), OrderRS.class);
         return response;
     }

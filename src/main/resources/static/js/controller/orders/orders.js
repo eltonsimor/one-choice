@@ -62,7 +62,7 @@ function create_order() {
             headers:{
               'Content-Type':'application/json'
             },
-            url: "/vianuvem/saveOrder",
+            url: "/vianuvem/orders",
             data: JSON.stringify(order),
             dataType: 'json',
             cache: false,
@@ -129,7 +129,7 @@ function loadSelectList() {
         headers: {
           'Content-Type': 'application/json'
         },
-        url: "/vianuvem/findAllLists",
+        url: "/vianuvem/lists",
         dataType: 'json',
         cache: false,
         timeout: 600000,
@@ -149,7 +149,7 @@ function loadTableOrders() {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: "/vianuvem/findAllOrders",
+        url: "/vianuvem/orders",
         dataType: 'json',
         cache: false,
         timeout: 600000,
@@ -185,7 +185,7 @@ function updateOrder(pk) {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: "/vianuvem/findOrderByPk?pk=" + pk,
+        url: "/vianuvem/orders/" + pk,
         dataType: 'json',
         cache: false,
         timeout: 600000,
@@ -208,7 +208,7 @@ function deleteOrder(pk) {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: "/vianuvem/deleteOrder?pk=" + pk,
+        url: "/vianuvem/orders/" + pk,
         dataType: 'json',
         cache: false,
         timeout: 600000,

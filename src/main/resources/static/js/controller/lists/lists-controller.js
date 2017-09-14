@@ -24,7 +24,7 @@ function create_list() {
         $.ajax({
             type: "POST",
             contentType: "application/json",
-            url: "/vianuvem/saveList",
+            url: "/vianuvem/lists",
             data: JSON.stringify(lists),
             dataType: 'json',
             cache: false,
